@@ -5,10 +5,10 @@ let editId = null;
 let search = "";
 function addTodo() {
   todos.push({
-    title: document.querySelector("input").value,
+    title: document.querySelector("#input-todo").value,
     todo_id: "todo-" + id,
   });
-  document.querySelector("input").value = "";
+  document.querySelector("#input-todo").value = "";
   id++;
   render();
 }
@@ -54,7 +54,7 @@ function updateTodo(id) {
 }
 
 function findTodo() {
-  search = document.querySelector("input").value;
+  search = document.querySelector("#input-todo").value;
   render();
 }
 
