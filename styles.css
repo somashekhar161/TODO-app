@@ -1,3 +1,95 @@
+/* https://www.realtimecolors.com/?colors=f0f3ec-0b0c08-798c5a-3a5a48-487069&fonts=Poppins-Poppins */
+/* base styles */
+html {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+*,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+:root[data-theme="light"] {
+  --text: #10130c;
+  --background: #f6f7f3;
+  --primary: #92a573;
+  --secondary: #a5c5b3;
+  --accent: #8fb7b1;
+}
+:root[data-theme="dark"] {
+  --text: #f0f3ec;
+  --background: #0b0c08;
+  --primary: #798c5a;
+  --secondary: #3a5a48;
+  --accent: #487069;
+}
+body {
+  color: var(--text);
+  background-color: var(--background);
+  border-color: var(--accent);
+  transition: color 0.3s, background-color 0.3s;
+}
+.header {
+  border-bottom: 0.1px solid gray;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+/* md */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .todo {
   background-color: #dca5a5;
   box-shadow: 2px 2px 2px 2px black;
@@ -14,4 +106,25 @@
   flex-direction: column;
   gap: 4px;
   max-width: 400px;
+}
+
+.icon-button {
+  height: 45px;
+  width: 45px;
+  background-color: #a2bed5;
+  border: none;
+  border-radius: 999px;
+
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 1px rgb(32, 32, 25);
+}
+
+.icon {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.icon:hover {
+  transform: scale(1.2);
+  transition: transform 0.25s;
 }
