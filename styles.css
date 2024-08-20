@@ -1,0 +1,17 @@
+.todo {
+  background-color: #dca5a5;
+  box-shadow: 2px 2px 2px 2px black;
+  padding: 20px 10px;
+  border: 1px solid black;
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-list-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 400px;
+}
