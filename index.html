@@ -14,19 +14,36 @@
     <link rel="stylesheet" href="styles/themetoggle.css" />
   </head>
   <body>
-    <div>
-      <header class="header">
-        <h1>Todo APP</h1>
-        <label class="switch theme-switcher">
-          <input type="checkbox" id="theme-toggle" checked />
-          <span class="slider round"></span>
-        </label>
-      </header>
+    <header class="header">
+      <h1>Todo APP</h1>
+      <label class="switch theme-switcher">
+        <input type="checkbox" id="theme-toggle" checked />
+        <span class="slider round"></span>
+      </label>
+    </header>
+    <main>
       <div class="container">
-        <div>
-          <input type="text" placeholder="enter todo" id="input-todo" />
-          <button onclick="addTodo()">Add todo</button>
-          <button onclick="findTodo() ">find Todo</button>
+        <div class="todo-input-cnt-outer">
+          <div class="todo-input-cnt-inner">
+            <label style="text-align: left; width: 100%">New Todo</label>
+            <input type="text" placeholder="enter todo" id="input-todo-title" />
+            <textarea
+              id="input-todo"
+              name="input-todo"
+              rows="4"
+              cols="50"
+              placeholder="details"
+            ></textarea>
+
+            <div>
+              <button onclick="addTodo()" type="submit" class="primary-btn btn">
+                Add todo
+              </button>
+              <button onclick="findTodo() " class="secondary-btn btn">
+                find Todo
+              </button>
+            </div>
+          </div>
         </div>
 
         <div>
@@ -34,7 +51,7 @@
           <div id="todo-list" class="todo-list-cnt"></div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
   <script src="script.js" type="text/javascript"></script>
   <script src="scripts/theme.js" type="text/javascript"></script>
