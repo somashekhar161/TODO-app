@@ -13,6 +13,7 @@ function addTodo() {
     title: document.querySelector("#input-todo-title").value,
     todo: document.querySelector("#input-todo").value,
     todo_id: "todo-" + id,
+    status: false,
   });
   document.querySelector("#input-todo-title").value = "";
   document.querySelector("#input-todo").value = "";
@@ -35,6 +36,11 @@ function editTodo(id) {
   render();
 }
 
+function toggleTodoStatus(id) {
+  const index = todos.findIndex((todo) => todo.todo_id === id);
+  todos[index].status = !todos[index].status;
+  render();
+}
 function updateTodo(id) {
   const index = todos.findIndex((todo) => todo.todo_id === id);
   if (index == -1) {
@@ -54,9 +60,22 @@ function findTodo() {
   render();
 }
 
-function TodoComponent({ title, todo, todo_id }) {
+function TodoComponent({ title, todo, todo_id, status }) {
   const newTodo = document.createElement("div");
   newTodo.setAttribute("id", `todo-${todo_id}`);
+
+  if (status) {
+    newTodo.setAttribute("class", `todo status-done`);
+    newTodo.innerHTML = `
+    <h3 class="todo-text">${title}</h3>
+    <p class="todo-text">${todo}</p>
+    <div></div>
+     <button onClick="toggleTodoStatus('${todo_id}')" class="icon-button done">
+        <img class="icon"  src="https://img.icons8.com/?size=100&id=3062&format=png&color=000000" />
+      </button>
+    `;
+    return newTodo;
+  }
   newTodo.setAttribute("class", `todo`);
   if (editId === todo_id) {
     //
@@ -81,6 +100,9 @@ function TodoComponent({ title, todo, todo_id }) {
         <img class="icon"  src="https://img.icons8.com/?size=100&id=15049&format=png&color=000000" />
       </button>
     </div>
+       <button onClick="toggleTodoStatus('${todo_id}')" class="icon-button done">
+        <img class="icon"  src="https://img.icons8.com/?size=100&id=79132&format=png&color=000000" />
+      </button>
     `;
   }
 

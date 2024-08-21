@@ -249,7 +249,7 @@ body {
 }
 
 .todo {
-  background-color: var(--background-500);
+  background-color: var(--background-600);
   box-shadow: 2px 2px 1px 2px var(--text-800);
   border: 2px solid var(--text-800);
   width: 420px;
@@ -259,12 +259,20 @@ body {
   color: var(--text-100);
 
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   gap: 2px;
+  position: relative;
 }
+
+.todo.status-done {
+  background-color: var(--secondary-700);
+}
+.todo.status-done > .todo-text {
+  text-decoration: line-through;
+}
+
 .todo-text {
-  max-width: 95%;
+  max-width: 85%;
 
   overflow-wrap: break-word;
 }
@@ -314,6 +322,14 @@ body {
 .icon-button.update {
   border-color: var(--secondary-200);
   box-shadow: 0px 0px 1px 2px var(--secondary-200);
+}
+.icon-button.done {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 0;
+  border-color: var(--primary-600);
+  box-shadow: 0px 0px 1px 2px var(--primary-400);
 }
 
 /* sm */
