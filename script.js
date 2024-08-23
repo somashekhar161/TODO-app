@@ -5,13 +5,19 @@ let editId = null;
 let search = "";
 
 function addTodo() {
-  if (search !== "") {
-    search = "";
+  const title = document.querySelector("#input-todo-title").value;
+  const todo = document.querySelector("#input-todo").value;
+  if (title == "") {
+    renderAlert("Please Enter Todo Title");
+    return;
   }
-
+  if (todo == "") {
+    renderAlert("Please Enter Todo details");
+    return;
+  }
   todos.push({
-    title: document.querySelector("#input-todo-title").value,
-    todo: document.querySelector("#input-todo").value,
+    title: title,
+    todo: todo,
     todo_id: "todo-" + id,
     status: false,
   });
@@ -56,7 +62,8 @@ function updateTodo(id) {
 }
 
 function findTodo() {
-  search = document.querySelector("#input-todo-title").value;
+  search = document.querySelector("#filter-todo").value;
+
   render();
 }
 
@@ -122,4 +129,17 @@ function render() {
       list.appendChild(TodoComponent(todo));
     });
   }
+}
+
+function renderAlert(message) {
+  const cnt = document.querySelector(".alet-box-cnt");
+  cnt.innerHTML = `
+  <div class="alet-box">
+    <div>${message}</div>
+  </div>
+  `;
+
+  setTimeout(() => {
+    cnt.innerHTML = "";
+  }, 5000);
 }

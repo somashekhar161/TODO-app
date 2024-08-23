@@ -39,18 +39,24 @@
               <button onclick="addTodo()" type="submit" class="primary-btn btn">
                 Add todo
               </button>
-              <button onclick="findTodo() " class="secondary-btn btn">
-                find Todo
-              </button>
             </div>
           </div>
         </div>
 
         <div>
           <h1>Todos List</h1>
+          <div class="filter-cnt">
+            <div class="filter-input-cnt">
+              <input id="filter-todo" placeholder="search todo" />
+            </div>
+            <button onclick="findTodo() " class="secondary-btn btn">
+              find Todo
+            </button>
+          </div>
           <div id="todo-list" class="todo-list-cnt"></div>
         </div>
       </div>
+      <div class="alet-box-cnt"></div>
     </main>
   </body>
   <script src="script.js" type="text/javascript"></script>
